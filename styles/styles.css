@@ -19,3 +19,7 @@ a:link,
 a:visited {
     color: #b34848;
 }
+
+a.nav-link {
+    color: #cdddeb;
+}
