@@ -43,7 +43,7 @@ $posts = fetch($sql, $connection, true);
         <?php foreach ($posts as $post) {?>
 
             <div class="blog-post">
-                <h2 class="blog-post-title"><a href="#"><?php print_r($post['title']);?></a></h2>
+                <h2 class="blog-post-title"><a href="single-post.php?post-id=<?php echo $post['id'] ?>"><?php print_r($post['title']);?></a></h2>
                 <p class="blog-post-meta"><?php echo "Post created: " . $post['created_at'] ?> by <a href="#"> <?php print_r($post['author'])?></a></p>
 
                 <p> <?php print_r($post['body']);?> </p>
