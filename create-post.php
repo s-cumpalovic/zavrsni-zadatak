@@ -2,33 +2,23 @@
 include_once "./partial-files/header.php";
 include_once "database.php";
 
+// Fetches authors from database
+
+$sql_fetchNewAuthor = "SELECT * FROM author";
+
+$authors = fetch($sql_fetchNewAuthor, $connection);
+
 if (isset($_POST['publish-post'])) {
     $title = $_POST['title'];
     $body = $_POST['body'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $gender = $_POST['gender'];
+    $authorid = $_POST['author'];
 
     $currentDate = date('Y-m-d H:i:s');
-
-    // Creates a new author of the new post
-
-    $sql_author = "INSERT INTO author (first_name, last_name, gender)
-                    VALUES ('$firstname', '$lastname', '$gender')";
-
-    $author = fetch($sql_author, $connection);
-
-    // Fetches the new author from the database and selects its ID
-
-    $sql_fetchNewAuthor = "SELECT id FROM author WHERE first_name = '$firstname' AND last_name = '$lastname'";
-
-    $newAuthor = fetch($sql_fetchNewAuthor, $connection);
-    $newAuthorID = $newAuthor[0]['id'];
 
     // Creates new post into the database with the new author fetched from database.
 
     $sql_newPost = "INSERT INTO posts (title, body, created_at, author_id)
-                    VALUES ('$title', '$body', '$currentDate','$newAuthorID')";
+                      VALUES ('$title', '$body', '$currentDate','$authorid')";
 
     $newPost = fetch($sql_newPost, $connection);
 }
@@ -79,21 +69,25 @@ if (isset($_POST['publish-post'])) {
         <hr><br>
         <form action="" method="post">
             <label for="title">Title</label><br>
-            <input required type="text" id="title" name="title" placeholder="Title"><br>
+            <input required type="text" class="form-control" id="title" name="title" placeholder="Title"><br>
             <label for="body">Body</label><br>
-            <textarea required name="body" id="body" cols="70" rows="10"></textarea><br>
-            <label for="author">Your firstname</label><br>
-            <input required type="text" id="firstname" name="firstname" placeholder="Firstname"><br><br>
-            <label for="author">Your lastname</label><br>
-            <input required type="text" id="lastname" name="lastname" placeholder="Author"><br><br>
-            <label for="author">Gender</label><br>
-            <input required type="radio" name="gender" value="Male">Male
-            <input required type="radio" name="gender" value="Female">Female<br><br>
+            <textarea required name="body" class="form-control" id="body" cols="70" rows="10"></textarea><br><br>
+            <label for="author">Choose an author:</label><br>
 
+            <select name="author" id="author" class="custom-select my-1 mr-sm-2">
+                <?php foreach ($authors as $author) {?>
 
-            <button class="publish-post" type="submit" name="publish-post" id="publish-post">Publish</button>
+                    <option value="<?php echo $author['id'] ?>" class="<?php echo $author['gender'] ?>">
+                    <?php echo $author['first_name'] . " " . $author['last_name'] ?></option>
+
+                <?php }?>
+            </select><br><br>
+            <button class="btn btn-primary" type="submit" name="publish-post" id="publish-post">Publish</button>
         </form>
+
     </div>
+
+    <script src="./main.js"></script>
 
 
 

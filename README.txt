@@ -36,5 +36,15 @@ BONUS:
 		Changed sql query keys in php to match database column names.
 		Made some changes into sidebar, footer, header (Hard-coded some fresh information)
 		Made a lot of small tweaks into all the php files, where necessary,
+-------------------------------------------------------------------------------------------------
+BONUS 2:     -  Changed navigation bar to have only necessary link.
+		Seperated author form from post form
+		Created new query to insert author into the database
+		Made some styles for color changes on Create author page(blue for male, pink for female)
+		On PUBLISH A POST page added some bootstrap class for input fields
+		
+		Used Javascript DOM to change colors of the selected authors, and included main.js into the file
+
+		
 		
  
