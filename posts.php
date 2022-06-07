@@ -2,10 +2,15 @@
 include_once "./partial-files/header.php";
 include_once "database.php";
 
-$sql = "SELECT * FROM posts ORDER BY created_at DESC";
+$sql = "SELECT * FROM posts as p
+        INNER JOIN author as a
+        ON p.author_id = a.id
+        ORDER BY created_at DESC";
 
 $posts = fetch($sql, $connection, true);
-
+// echo "<pre>";
+// var_dump($posts);
+// echo "</pre>";
 ?>
 
 
@@ -43,8 +48,8 @@ $posts = fetch($sql, $connection, true);
         <?php foreach ($posts as $post) {?>
 
             <div class="blog-post">
-                <h2 class="blog-post-title"><a href="single-post.php?post-id=<?php echo $post['id'] ?>"><?php print_r($post['title']);?></a></h2>
-                <p class="blog-post-meta"><?php echo "Post created: " . $post['created_at'] ?> by <a href="#"> <?php print_r($post['author'])?></a></p>
+                <h2 class="blog-post-title"><a href="single-post.php?post-id=<?php echo $post['postid'] ?>"><?php print_r($post['title']);?></a></h2>
+                <p class="blog-post-meta"><?php echo "Post created: " . $post['created_at'] ?> by <a href="#"> <?php echo $post['first_name'] . " " . $post['last_name'] ?></a></p>
 
                 <p> <?php print_r($post['body']);?> </p>
             </div><!-- /.blog-post -->

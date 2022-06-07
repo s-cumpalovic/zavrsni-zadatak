@@ -16,4 +16,25 @@
 	      Used foreach loop to list all posts fetched from database and fit them into the HTML div.
 	      Created database.php to store all the necessary data for MySQL connection.
 
+5. Zadatak  - Created a redirection link with a element using $_GET method, in order to fetch data for
+	      specific post that has been clicked. Also created database for comments that goes for specific post
+	      Created a div for comments section and used foreach to list all the comments made on the current post.
+
+
+BONUS:
+	    - Created a form for publishing new posts.
+  		Added new table in database called authors.
+		Created new queries that insert new author into database,
+		then fetch that author and connects him to the new post he posted,
+		Made new references for foreign key in 'posts' and 'comments'
+		And accordingly made changes in php files to the new references of author
+		Added a couple of queries that execute by order with POST METHOD after user
+		filled the fields.
+		Also made the input fields required in the HTML file.
+
+// FIXED: 	Changed links in the navbar for "Home" = "posts.php" "Publish a post" = "create-post.php"
+		Changed sql query keys in php to match database column names.
+		Made some changes into sidebar, footer, header (Hard-coded some fresh information)
+		Made a lot of small tweaks into all the php files, where necessary,
+		
  

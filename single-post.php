@@ -8,13 +8,14 @@ if (isset($_GET['post-id'])) {
 
     $postID = $_GET['post-id'];
 
-    $sql_post = "SELECT * FROM posts WHERE id = '$postID'";
+    // Fetching posts from database
+
+    $sql_post = "SELECT * FROM posts as p
+                 LEFT JOIN author as a
+                 ON p.author_id = a.id
+                 WHERE p.postid = '$postID'";
+
     $singlePost = fetch($sql_post, $connection, false);
-
-    $sql_comment = "SELECT * FROM comments WHERE post_id = '$postID'";
-    $comments = fetch($sql_comment, $connection);
-
-    // var_dump($comments);
 
 }
 
@@ -51,22 +52,14 @@ if (isset($_GET['post-id'])) {
 
     <div class="blog-post">
         <h2 class="blog-post-title"><?php echo $singlePost['title'] ?></h2>
-        <p class="blog-post-meta">Created at: <?php echo $singlePost['created_at'] ?> by <a href="#"><?php echo $singlePost['author'] ?></a></p>
+        <p class="blog-post-meta">Created at: <?php echo $singlePost['created_at'] ?> by <a href="#"><?php echo $singlePost['first_name'] . " " . $singlePost['last_name'] ?></a></p>
 
         <p><?php echo $singlePost['body'] ?></p>
 
     </div><!-- /.blog-post -->
 
     <h4><u>Comments</u></h4><br><br>
-<?php foreach ($comments as $comment) {?>
-    <div class="comments">
-        <ul>
-            <li><h5><?php echo $comment['author'] ?></h5></li>
-            <p> <?php echo $comment['text'] ?></p>
-            <hr>
-        </ul>
-    </div>
-<?php }?>
+    <?php include_once "comments.php"?>
 
 </div>
 </div>
