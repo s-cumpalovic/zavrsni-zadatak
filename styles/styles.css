@@ -20,6 +20,8 @@ a:visited {
     color: #b34848;
 }
 
+
+
 a.nav-link {
     color: #cdddeb;
 }
@@ -117,4 +119,25 @@ input.gender-button-female[type='radio']:checked:after {
     display: inline-block;
     visibility: visible;
     border: 2px solid white;
+}
+
+/* Single post gender color */
+
+a.gender-male {
+    color: #3355FF;
+}
+
+a.gender-female {
+    color: #F731D6;
+}
+
+a.back-to-homepage {
+    padding: 0.4rem;
+    border-radius: 15px;
+    background-color: #c95d5d;
+    color: white;
+}
+
+a.back-to-homepage:hover {
+    background-color: #cf4242;
 }

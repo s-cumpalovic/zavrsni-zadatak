@@ -6,8 +6,8 @@ $password = "";
 $dbname = "blog";
 
 try {
-    $connection = new PDO("mysql:host=$servername;port=3308;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
+    $connection = new PDO("mysql:host=$servername;port=3308;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo $e->getMessage();

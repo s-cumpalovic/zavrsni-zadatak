@@ -44,30 +44,34 @@ if (isset($_GET['post-id'])) {
 
     <title><?php echo $singlePost['title'] ?></title>
 </head>
-<body>
+    <body>
 
-    <main role="main" class="container">
-    <a href="posts.php"><i class="uil uil-arrow-left"></i>Back to homepage</a><br><br>
+<!-- SINGLE POSTS SECTION -->
+        <main role="main" class="container">
+            <div class="row">
 
+                <div class="col-sm-8 blog-main">
+                            <a href="index.php" class="back-to-homepage"><i class="uil uil-arrow-left"></i>Back to homepage</a><br><br>
 
-    <div class="blog-post">
-        <h2 class="blog-post-title"><?php echo $singlePost['title'] ?></h2>
-        <p class="blog-post-meta">Created at: <?php echo $singlePost['created_at'] ?> by <a href="#"><?php echo $singlePost['first_name'] . " " . $singlePost['last_name'] ?></a></p>
+                            <div class="blog-post">
+                                <h2 class="blog-post-title"><?php echo $singlePost['title'] ?></h2>
+                                <p class="blog-post-meta">Created at: <?php echo $singlePost['created_at'] ?> by <a class="<?php if ($singlePost['gender'] === 'Male') {echo "gender-male";} else {echo "gender-female";}?>" href="#">
+                                <?php echo $singlePost['first_name'] . " " . $singlePost['last_name'] ?></a></p>
 
-        <p><?php echo $singlePost['body'] ?></p>
+                                <p><?php echo $singlePost['body'] ?></p>
 
-    </div><!-- /.blog-post -->
+                            </div><!-- /.blog-post -->
 
-    <h4><u>Comments</u></h4><br><br>
-    <?php include_once "comments.php"?>
+                            <h4><u>Comments</u></h4><br><br>
+                            <?php include_once "comments.php"?>
 
-</div>
-</div>
-</main>
-<?php include_once "./partial-files/sidebar.php";?>
-<?php include_once "./partial-files/footer.php";?>
+                </div><!-- /.blog-main -->
+                <?php include_once "./partial-files/sidebar.php";?>
+            </div><!-- /.row -->
+        </main>
+        <?php include_once "./partial-files/footer.php";?>
 
-</body>
+    </body>
 </html>
 
 

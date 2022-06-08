@@ -19,7 +19,7 @@
 5. Zadatak  - Created a redirection link with a element using $_GET method, in order to fetch data for
 	      specific post that has been clicked. Also created database for comments that goes for specific post
 	      Created a div for comments section and used foreach to list all the comments made on the current post.
-
+-----------------------------------------------------------------------------------------------------------------
 
 BONUS:
 	    - Created a form for publishing new posts.
@@ -44,6 +44,24 @@ BONUS 2:     -  Changed navigation bar to have only necessary link.
 		On PUBLISH A POST page added some bootstrap class for input fields
 		
 		Used Javascript DOM to change colors of the selected authors, and included main.js into the file
+----------------------------------------------------------------------------------------------------------------------
+		--------IMPORTANT!!!-------
+
+		CHANGED posts.php TO index.php for easier launching of the website
+
+		--------IMPORTANT!!!-------
+
+----------------------------------------------------------------------------------------------------------------------
+BONUS 3:     -  Authors were already dinamically being fetched from the database
+		Colors have been changed on single post of the author according to the class of a element
+		Added new styles for a couple of HTML elements
+		Changed navbar redirection links from posts.php to index.php
+		Made some slight position changes in all files to make it more readable,
+		Added comments where necessary.
+		
+		
+
+		
 
 		
 		

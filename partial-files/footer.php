@@ -1,5 +1,5 @@
 <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>&copy; Blog built for <a href="https://www.vivifyideas.com/academy/" target="_blank">Vivify Ideas Academy</a> by <a href="https://github.com/s-cumpalovic/" target="_blank">Stefan Cumpalović</a>.</p>
     <p>
         <a href="#">Back to top</a>
     </p>

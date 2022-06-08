@@ -5,7 +5,7 @@
     <div class="blog-masthead">
         <div class="container">
             <nav class="nav">
-                <a class="nav-link" href="posts.php">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
                 <a class="nav-link" href="create-post.php">Publish a post</a>
                 <a class="nav-link" href="create-author.php">Register an author</a>
             </nav>

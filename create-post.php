@@ -15,7 +15,7 @@ if (isset($_POST['publish-post'])) {
 
     $currentDate = date('Y-m-d H:i:s');
 
-    // Creates new post into the database with the new author fetched from database.
+    // Creates new post into the database with the author id  fetched from database.
 
     $sql_newPost = "INSERT INTO posts (title, body, created_at, author_id)
                       VALUES ('$title', '$body', '$currentDate','$authorid')";
@@ -55,43 +55,49 @@ if (isset($_POST['publish-post'])) {
 // Used for notifying user that the post has been published.
 
 if (isset($_POST['publish-post'])) {
-    echo "<h5>Post published successfully</h5>";
+    echo "<h5><u>Post published successfully</u></h5>";
 
 }?>
 
 <!-- CREATE NEW POST SECTION -->
 
-    <a href="posts.php"><i class="uil uil-arrow-left"></i>Back to homepage</a><br><br>
     <div class="row">
 
-    <div class="createPost">
-        <h3>Publish a post </h3>
-        <hr><br>
-        <form action="" method="post">
-            <label for="title">Title</label><br>
-            <input required type="text" class="form-control" id="title" name="title" placeholder="Title"><br>
-            <label for="body">Body</label><br>
-            <textarea required name="body" class="form-control" id="body" cols="70" rows="10"></textarea><br><br>
-            <label for="author">Choose an author:</label><br>
+        <div class="col-sm-8 blog-main">
 
-            <select name="author" id="author" class="custom-select my-1 mr-sm-2">
-                <?php foreach ($authors as $author) {?>
 
-                    <option value="<?php echo $author['id'] ?>" class="<?php echo $author['gender'] ?>">
-                    <?php echo $author['first_name'] . " " . $author['last_name'] ?></option>
 
-                <?php }?>
-            </select><br><br>
-            <button class="btn btn-primary" type="submit" name="publish-post" id="publish-post">Publish</button>
-        </form>
+            <div class="createPost">
+                    <a href="index.php" class="back-to-homepage"><i class="uil uil-arrow-left"></i>Back to homepage</a><br><br>
 
-    </div>
 
+                    <h3>Publish a post </h3>
+                    <hr><br>
+                    <form action="" method="post">
+                        <label for="title">Title</label><br>
+                        <input required type="text" class="form-control" id="title" name="title" placeholder="Title"><br>
+                        <label for="body">Body</label><br>
+                        <textarea required name="body" class="form-control" id="body" cols="70" rows="10"></textarea><br><br>
+                        <label for="author">Choose an author:</label><br>
+
+                        <select name="author" id="author" class="custom-select my-1 mr-sm-2">
+                            <?php foreach ($authors as $author) {?>
+
+                                <option value="<?php echo $author['id'] ?>" class="<?php echo $author['gender'] ?>">
+                                <?php echo $author['first_name'] . " " . $author['last_name'] ?></option>
+
+                            <?php }?>
+                        </select><br><br>
+                        <button class="btn btn-primary" type="submit" name="publish-post" id="publish-post">Publish</button>
+                    </form>
+                </div>
+            </div><!-- /.blog-main -->
+            <?php include_once "./partial-files/sidebar.php"?>
+    </div><!-- /.blog-row -->
     <script src="./main.js"></script>
 
 
 
-        <?php include_once "./partial-files/sidebar.php"?>
 
 
 

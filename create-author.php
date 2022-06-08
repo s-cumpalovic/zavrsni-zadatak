@@ -7,14 +7,15 @@ if (isset($_POST['create-author'])) {
     $lastname = $_POST['lastname'];
     $gender = $_POST['gender'];
 
-    // Creates a new author of the new post
+    // Creates a new author and inserts it into the database.
 
     $sql_author = "INSERT INTO author (first_name, last_name, gender)
-                   VALUES ('$firstname', '$lastname', '$gender')";
+                    VALUES ('$firstname', '$lastname', '$gender')";
 
     $author = fetch($sql_author, $connection);
 
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -40,17 +41,21 @@ if (isset($_POST['create-author'])) {
     <body>
 
         <main role="main" class="container">
-            <div class="row">
-                <div class="createAuthor">
-                <?php
+<?php
 // Used for notifying user that the author has been registered.
 
 if (isset($_POST['create-author'])) {
-    echo "<h5>Author registered successfully</h5>";
+    echo "<h5><u>Author registered successfully.</u></h5>";
 
 }?>
+<!-- REGISTER A NEW AUTHOR SECTION -->
 
-                    <a href="posts.php"><i class="uil uil-arrow-left"></i>Back to homepage</a><br><br>
+            <div class="row">
+                <div class="createAuthor">
+
+
+
+                    <a href="index.php" class="back-to-homepage"><i class="uil uil-arrow-left"></i>Back to homepage</a><br><br>
 
                     <h3>Register an author</h3>
                     <hr><br>
@@ -70,11 +75,12 @@ if (isset($_POST['create-author'])) {
 
                 </div>
 
-                <?php include_once "./partial-files/sidebar.php"?>
+<?php include_once "./partial-files/sidebar.php"?>
+
             </div>
         </main><!-- /.container -->
 
+<?php include_once "./partial-files/footer.php"?>
 
-        <?php include_once "./partial-files/footer.php";?>
     </body>
 </html>

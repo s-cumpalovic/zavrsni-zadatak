@@ -8,9 +8,7 @@ $sql = "SELECT * FROM posts as p
         ORDER BY created_at DESC";
 
 $posts = fetch($sql, $connection, true);
-// echo "<pre>";
-// var_dump($posts);
-// echo "</pre>";
+
 ?>
 
 
@@ -45,14 +43,16 @@ $posts = fetch($sql, $connection, true);
 
      <div class="col-sm-8 blog-main">
 
-        <?php foreach ($posts as $post) {?>
+<!-- SHOWS ALL THE POSTS FROM THE DATABASE -->
 
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="single-post.php?post-id=<?php echo $post['postid'] ?>"><?php print_r($post['title']);?></a></h2>
-                <p class="blog-post-meta"><?php echo "Post created: " . $post['created_at'] ?> by <a href="#"> <?php echo $post['first_name'] . " " . $post['last_name'] ?></a></p>
+<?php foreach ($posts as $post) {?>
 
-                <p> <?php print_r($post['body']);?> </p>
-            </div><!-- /.blog-post -->
+         <div class="blog-post">
+             <h2 class="blog-post-title"><a href="single-post.php?post-id=<?php echo $post['postid'] ?>"><?php print_r($post['title']);?></a></h2>
+             <p class="blog-post-meta"><?php echo "Post created: " . $post['created_at'] ?> by <a href="#"> <?php echo $post['first_name'] . " " . $post['last_name'] ?></a></p>
+
+              <p> <?php print_r($post['body']);?> </p>
+         </div><!-- /.blog-post -->
 <?php }?>
 
 
