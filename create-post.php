@@ -80,7 +80,7 @@ if (isset($_POST['publish-post'])) {
                         <textarea required name="body" class="form-control" id="body" cols="70" rows="10"></textarea><br><br>
                         <label for="author">Author:</label><br>
 
-                        <select name="author" id="author" class="custom-select my-1 mr-sm-2">
+                        <select required name="author" id="author" class="custom-select my-1 mr-sm-2">
                                 <option value="" disabled selected >Select an author</option>
 
                             <?php foreach ($authors as $author) {?>
