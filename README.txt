@@ -58,7 +58,13 @@ BONUS 3:     -  Authors were already dinamically being fetched from the database
 		Changed navbar redirection links from posts.php to index.php
 		Made some slight position changes in all files to make it more readable,
 		Added comments where necessary.
+
+----------------------------------------------------------------------------------------------------------------------
 		
+BONUS 4: 	Created new fillter on index.php that fillters out the selected authors
+		Created a new foreach loop for filtered authors only (when selected)
+		Changed some styles for new option in the SELECT element
+		Also made changes in main.js for new option element.
 		
 
 		
