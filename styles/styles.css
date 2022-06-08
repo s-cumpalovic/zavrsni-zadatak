@@ -131,6 +131,8 @@ a.gender-female {
     color: #F731D6;
 }
 
+/* Back to homepage redirection element */
+
 a.back-to-homepage {
     padding: 0.4rem;
     border-radius: 15px;
@@ -140,4 +142,19 @@ a.back-to-homepage {
 
 a.back-to-homepage:hover {
     background-color: #cf4242;
+}
+
+/* Select elements color */
+
+select:hover {
+    cursor: pointer;
+}
+
+
+select option.male {
+    color: #3355FF;
+}
+
+select option.female {
+    color: #F731D6;
 }

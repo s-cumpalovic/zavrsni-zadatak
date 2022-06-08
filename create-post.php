@@ -78,9 +78,11 @@ if (isset($_POST['publish-post'])) {
                         <input required type="text" class="form-control" id="title" name="title" placeholder="Title"><br>
                         <label for="body">Body</label><br>
                         <textarea required name="body" class="form-control" id="body" cols="70" rows="10"></textarea><br><br>
-                        <label for="author">Choose an author:</label><br>
+                        <label for="author">Author:</label><br>
 
                         <select name="author" id="author" class="custom-select my-1 mr-sm-2">
+                                <option value="" disabled selected >Select an author</option>
+
                             <?php foreach ($authors as $author) {?>
 
                                 <option value="<?php echo $author['id'] ?>" class="<?php echo $author['gender'] ?>">
@@ -88,6 +90,7 @@ if (isset($_POST['publish-post'])) {
 
                             <?php }?>
                         </select><br><br>
+
                         <button class="btn btn-primary" type="submit" name="publish-post" id="publish-post">Publish</button>
                     </form>
                 </div>
