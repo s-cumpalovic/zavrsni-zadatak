@@ -64,7 +64,7 @@ if (isset($_POST['create-author'])) {
                         <label for="author">Your firstname</label><br>
                         <input required type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname"><br><br>
                         <label for="author">Your lastname</label><br>
-                        <input required type="text" class="form-control" id="lastname" name="lastname" placeholder="Author"><br><br>
+                        <input required type="text" class="form-control" id="lastname" name="lastname" placeholder="Lastname"><br><br>
                         <label for="author">Gender</label><br>
                         <input class="gender-button-male" required type="radio"  name="gender" value="Male"> Male
                         <input class="gender-button-female" required type="radio"  name="gender" value="Female"> Female<br><br>

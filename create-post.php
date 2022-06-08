@@ -77,7 +77,7 @@ if (isset($_POST['publish-post'])) {
                         <label for="title">Title</label><br>
                         <input required type="text" class="form-control" id="title" name="title" placeholder="Title"><br>
                         <label for="body">Body</label><br>
-                        <textarea required name="body" class="form-control" id="body" cols="70" rows="10"></textarea><br><br>
+                        <textarea required name="body" class="form-control" id="body" cols="70" rows="10" placeholder="Your post content..."></textarea><br><br>
                         <label for="author">Author:</label><br>
 
                         <select required name="author" id="author" class="custom-select my-1 mr-sm-2">
